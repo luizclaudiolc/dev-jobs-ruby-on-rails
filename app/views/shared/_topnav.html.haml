@@ -1,0 +1,18 @@
+%nav.navbar.navbar-expand-lg.fixed-top.navbar-dark.bg-dark
+  %a.navbar-brand.mr-auto.mr-lg-0{:href => "#"} Dev Jobs
+  %button.navbar-toggler.p-0.border-0{"data-toggle" => "offcanvas", :type => "button"}
+    %span.navbar-toggler-icon
+  #navbarsExampleDefault.navbar-collapse.offcanvas-collapse
+    %ul.navbar-nav.mr-auto
+      %li.nav-item.active
+        %a.nav-link{:href => root_path}
+          Home  
+          %span.sr-only (atual)
+      %li.nav-item
+        %a.nav-link{:href => "#"} Login/Cadastro
+      -# %li.nav-item.dropdown
+      -#   %a#dropdown01.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "https://example.com"} Configurações
+      -#   .dropdown-menu{"aria-labelledby" => "dropdown01"}
+      -#     %a.dropdown-item{:href => "#"} Item
+      -#     %a.dropdown-item{:href => "#"} Outro item
+      -#     %a.dropdown-item{:href => "#"} Algum outro item
