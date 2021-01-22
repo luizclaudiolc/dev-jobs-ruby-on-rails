@@ -10,9 +10,8 @@
           %span.sr-only (atual)
       %li.nav-item
         %a.nav-link{:href => "#"} Login/Cadastro
-      -# %li.nav-item.dropdown
-      -#   %a#dropdown01.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "https://example.com"} Configurações
-      -#   .dropdown-menu{"aria-labelledby" => "dropdown01"}
-      -#     %a.dropdown-item{:href => "#"} Item
-      -#     %a.dropdown-item{:href => "#"} Outro item
-      -#     %a.dropdown-item{:href => "#"} Algum outro item
+      %li.nav-item.dropdown
+        %a#dropdown01.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#"} Configurações
+        .dropdown-menu{"aria-labelledby" => "dropdown01"}
+          = link_to('Sair', destroy_user_session_path, method: :delete, class: 'dropdown-item')
+          

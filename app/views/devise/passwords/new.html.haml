@@ -1,11 +1,15 @@
-%h2 Forgot your password?
-= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
-  = f.error_notification
-  .form-inputs
-    = f.input :email,                       |
-      required: true,                       |
-      autofocus: true,                      |
-      input_html: { autocomplete: "email" } |
-  .form-actions
-    = f.button :submit, "Send me reset password instructions"
-= render "devise/shared/links"
+.row.justify-content-center
+  .col-md-6.contents
+    .row.justify-content-center
+      .col-md-12
+        .form-block
+          .mb-4
+            %h2 Esqueceu sua senha?
+            = simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+              = f.error_notification
+              .form-inputs
+                = f.input :email, required: true, label:false, placeholder:"E-mail cadastrado", autofocus: true, input_html: { autocomplete: "email" }
+              .form-actions
+                = f.button :submit, "Recuperar senha", class:"btn-block btn-outline-dark"
+              %hr/
+              = render "devise/shared/links"

@@ -4,57 +4,14 @@
       .col-md-12
         .form-block
           .mb-4
-            %h3
-              Sign In to
-              %strong Colorlib
-            %p.mb-4 Lorem ipsum dolor sit amet elit. Sapiente sit aut eos consectetur adipisicing.
-          %form{:action => "#", :method => "post"}
-            .form-group.first
-              %label{:for => "username"} Username
-              %input#username.form-control{:type => "text"}/
-            .form-group.last.mb-4
-              %label{:for => "password"} Password
-              %input#password.form-control{:type => "password"}/
-            .d-flex.mb-5.align-items-center
-              %label.control.control--checkbox.mb-0
-                %span.caption Remember me
-                %input{:checked => "checked", :type => "checkbox"}/
-                .control__indicator
-              %span.ml-auto
-                %a.forgot-pass{:href => "#"} Forgot Password
-            %input.btn.btn-pill.text-white.btn-block.btn-primary{:type => "submit", :value => "Log In"}/
-            %h2 Log in
+            %h2 Login
             = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
               .form-inputs
-                = f.input :email, required: false, autofocus: true, input_html: { autocomplete: "email" }
-                = f.input :password, required: false, input_html: { autocomplete: "current-password" }
-                = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
+              = f.input :email, required: false, label:false, placeholder:"E-mail", autofocus: true, input_html: { autocomplete: "email" }
+              = f.input :password, required: false, label:false, placeholder:"Senha", input_html: { autocomplete: "current-password" }
+              = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
               .form-actions
-                = f.button :submit, "Log in"
-                = render "devise/shared/links"
-            %span.d-block.text-center.my-4.text-muted or sign in with
-            .social-login.text-center
-              %a.facebook{:href => "#"}
-                %span.icon-facebook.mr-3
-              %a.twitter{:href => "#"}
-                %span.icon-twitter.mr-3
-              %a.google{:href => "#"}
-                %span.icon-google.mr-3
-
-
-
-
-
-
-
-
-
--# %h2 Log in
--# = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
--#   .form-inputs
--#     = f.input :email, required: false, autofocus: true, input_html: { autocomplete: "email" }
--#     = f.input :password, required: false, input_html: { autocomplete: "current-password" }
--#     = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
--#   .form-actions
--#     = f.button :submit, "Log in"
--# = render "devise/shared/links"
+              = f.button :submit, "Entrar", class:"btn-block btn-outline-dark"
+              %hr/
+            = render "devise/shared/links"
+            
