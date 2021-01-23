@@ -10,7 +10,7 @@
               = f.input :reset_password_token, as: :hidden
               = f.full_error :reset_password_token
               .form-inputs
-                = f.input :password, label: "Nova senha", required: true, autofocus: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), input_html: { autocomplete: "new-password" }
+                = f.input :password, label: "Nova senha", required: true, autofocus: true, hint: ("#{@minimum_password_length}caracteres mínimo" if @minimum_password_length), input_html: { autocomplete: "new-password" }
                 = f.input :password_confirmation, label: "Confirme a nova senha", required: true, input_html: { autocomplete: "new-password" }
               .form-actions
                 = f.button :submit, "Trocar senha", class:"btn-block btn-outline-dark"

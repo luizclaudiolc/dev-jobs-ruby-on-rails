@@ -6,12 +6,32 @@
     %ul.navbar-nav.mr-auto
       %li.nav-item.active
         %a.nav-link{:href => root_path}
-          Home  
-          %span.sr-only (atual)
-      %li.nav-item
-        %a.nav-link{:href => "#"} Login/Cadastro
-      %li.nav-item.dropdown
-        %a#dropdown01.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#"} Configurações
-        .dropdown-menu{"aria-labelledby" => "dropdown01"}
-          = link_to('Sair', destroy_user_session_path, method: :delete, class: 'dropdown-item')
+          Home
+      - unless user_signed_in?
+        %li.nav-item
+        = link_to 'Login/Cadastro', new_user_session_path, class: 'nav-link'
+      - if user_signed_in?
+        %li.nav-item.dropdown
+          %a#dropdown01.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#"} Configurações
+          .dropdown-menu{"aria-labelledby" => "dropdown01"}
+            = link_to('Sair', destroy_user_session_path, method: :delete, class: 'dropdown-item')
           
+
+
+      -#     - unless user_signed_in?
+      -#   %li.nav-item
+      -#     = link_to 'Login/Cadastro', new_user_session_path, class: 'nav-link'
+      -# - if user_signed_in?
+      -#   %li.nav-item.active
+      -#     %a.nav-link{:href => dynamic_url_company}
+      -#       Minha Empresa
+      -#   %li.nav-item.active
+      -#     %a.nav-link{:href => positions_url}
+      -#       Minhas Vagas
+      -#   %li.nav-item.dropdown
+      -#     %a#dropdown01.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#"} Settings
+      -#     .dropdown-menu{"aria-labelledby" => "dropdown01"}
+      -#       = link_to('Sair', destroy_user_session_path, method: :delete, class: 'dropdown-item')
+      -#   %li.nav-item
+      -#     %a.nav-link.public-position{:href => new_position_path}
+      -#       Publicar vaga

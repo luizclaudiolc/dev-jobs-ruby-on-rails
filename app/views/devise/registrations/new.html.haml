@@ -9,7 +9,7 @@
               = f.error_notification
               .form-inputs
                 = f.input :email, required: true, label:false, autofocus: true, input_html: { autocomplete: "email" }, placeholder:"E-mail"
-                = f.input :password, required: true, label:false, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),input_html: { autocomplete: "new-password" }, placeholder:"Senha"
+                = f.input :password, required: true, label:false, hint: ("#{@minimum_password_length} caracteres mínimo" if @minimum_password_length),input_html: { autocomplete: "new-password" }, placeholder:"Senha"
                 = f.input :password_confirmation, required: true, label:false, input_html: { autocomplete: "new-password" }, placeholder:"Confirme senha"
               .form-actions
                 = f.button :submit, "Cadastrar", class:"btn-block btn-outline-dark"
